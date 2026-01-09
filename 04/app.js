@@ -1,8 +1,16 @@
 const runTimer = function(){
-    timerID = setInterval
-    const time = (new Date()).toLocaleTimeString();
-    console.log("aktualny czas: ", time);
+    let counter = 0;
 
-}
 
-setInterval(runTimer, 5000);
+    const timerID = setInterval(function() {
+        const time = (new Date()).toLocaleTimeString();
+        console.log("aktualny czas: ", time);
+        counter++;
+        if (counter === 5){
+            clearInterval(timerID);
+        }
+    },5000);
+
+};
+
+runTimer();
